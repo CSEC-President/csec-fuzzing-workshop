@@ -127,12 +127,20 @@ def install_multipass_windows():
         print_info("Attempting installation via winget...")
         if run_command("winget install Canonical.Multipass"):
             print_success("Multipass installed via winget")
-            time.sleep(3)
-            if verify_multipass_works():
-                return True
+            
+            print_header("IMPORTANT: Terminal Restart Required")
+            print_warning("Windows needs to update environment variables.")
+            print_info("\nPlease follow these steps:")
+            print_info("1. Close this terminal window")
+            print_info("2. Open a NEW terminal window")
+            print_info("3. Run this script again")
+            print_info("\nThe script will detect Multipass is installed and continue setup.")
+            print("\nPress Enter to exit...")
+            input()
+            sys.exit(0)
 
     print_warning("Please install Multipass manually:")
-    print_info("https://canonical.com/multipass/download/windows")
+    print_info("https://multipass.run/download/windows")
     print_info("\nAfter installation:")
     print_info("1. Restart your terminal")
     print_info("2. Ensure Hyper-V is enabled")
@@ -207,6 +215,9 @@ def setup_vm(vm_name="fuzzing-vm"):
         print_error("VM is not running")
         return False
 
+    # Detect OS for proper command formatting
+    os_type = detect_os()
+
     # Package installation steps with descriptive names
     steps = [
         ("Updating package lists", "sudo apt update"),
@@ -225,7 +236,15 @@ def setup_vm(vm_name="fuzzing-vm"):
     failed = []
     for description, cmd in steps:
         print_info(description)
-        full_cmd = f"multipass exec {vm_name} -- bash -c '{cmd}'"
+        
+        # Fix quote handling for Windows
+        if os_type == "windows":
+            # Use double quotes for bash -c on Windows
+            full_cmd = f'multipass exec {vm_name} -- bash -c "{cmd}"'
+        else:
+            # Use single quotes on macOS/Linux (original behavior)
+            full_cmd = f"multipass exec {vm_name} -- bash -c '{cmd}'"
+            
         if not run_command(full_cmd):
             failed.append(description)
             print_warning(f"Failed: {description}")
