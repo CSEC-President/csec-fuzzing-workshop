@@ -298,12 +298,34 @@ By participating, you agree to use this knowledge ethically and legally, and acc
 
 ---
 
-## Resources
+## Fuzzing Resources
 
-- [Fuzzing101 Repository](https://github.com/antonio-morales/Fuzzing101)
-- [AFL++ Documentation](https://github.com/AFLplusplus/AFLplusplus/blob/stable/docs/README.md)
-- [Multipass Documentation](https://multipass.run/docs)
+### Foundational Resources
 
+These resources cover the basics of fuzzing, core tools, and learning materials:
+
+- [Fuzzing101 Repository](https://github.com/antonio-morales/Fuzzing101) - Step-by-step tutorial series for learning fuzzing from scratch
+- [AFL++ Documentation](https://github.com/AFLplusplus/AFLplusplus/blob/stable/docs/README.md) - Comprehensive documentation for AFL++, the most popular coverage-guided fuzzer
+- [AFL++ Tutorials](https://aflplus.plus/docs/tutorials/) - Official tutorials for getting started with AFL++
+- [Multipass Documentation](https://multipass.run/docs) - Tool for quickly spinning up Ubuntu VMs for fuzzing environments
+- [Awesome-Fuzzing](https://github.com/secfigo/Awesome-Fuzzing) - Curated list of fuzzing resources, tools, and papers
+
+### Building Something New (Project Ideas)
+
+These resources showcase advanced techniques, real-world case studies, and novel approaches to fuzzing:
+
+- [Leveling Up Fuzzing: Finding More Vulnerabilities](https://security.googleblog.com/2024/11/leveling-up-fuzzing-finding-more.html) - Google's advanced fuzzing techniques and improvements
+- [SMT Solvers Guide](https://de-engineer.github.io/SMT-Solvers/) - Introduction to SMT solvers, useful for constraint-based fuzzing
+- [Boosting Skeleton-Driven SMT Solver Fuzzing by Leveraging LLM to Produce Formula Generators](https://arxiv.org/abs/2508.20340) - Latest research on fuzzing techniques
+- [Effective Fuzzing: dav1d Case Study](https://googleprojectzero.blogspot.com/2024/10/effective-fuzzing-dav1d-case-study.html) - Real-world example of fuzzing a video decoder
+- [Breaking the Sound Barrier: Fuzzing Audio Codecs](https://googleprojectzero.blogspot.com/2025/05/breaking-sound-barrier-part-i-fuzzing.html) - Advanced case study on fuzzing audio processing
+- [Jackalope](https://github.com/googleprojectzero/Jackalope) - Customizable, distributed fuzzer from Google Project Zero
+- [Fuzzing Ladybird Browser](https://awesomekling.substack.com/p/fuzzing-ladybird-with-tools-from) - Case study on fuzzing a web browser with modern tools
+- [JIT Bug Finding with SMT and Fuzzing](https://www.pypy.org/posts/2022/12/jit-bug-finding-smt-fuzzing.html) - Novel approach combining SMT solvers with fuzzing for JIT compilers
+- [LLM4Decompile](https://github.com/albertan017/LLM4Decompile) - LLM-based binary decompilation for generating recompilable source code
+- [LLAMAFUZZ](https://github.com/SecurityLab-UCD/LLAMAFUZZ) - LLM-enhanced greybox fuzzing for structured data mutation
+- [RetroWrite](https://github.com/HexHive/retrowrite) - Binary rewriting framework for efficient binary-only fuzzing instrumentation
+- [OSS-Fuzz-Gen](https://github.com/google/oss-fuzz-gen) - Google's LLM-powered fuzz target generation framework
 ---
 
 Good luck! 🐛
