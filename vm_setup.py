@@ -58,25 +58,25 @@ class Colors:
 
 
 def print_header(msg):
-    print(f"\n{Colors.HEADER}{Colors.BOLD}{'=' * 60}{Colors.END}")
-    print(f"{Colors.HEADER}{Colors.BOLD}{msg}{Colors.END}")
-    print(f"{Colors.HEADER}{Colors.BOLD}{'=' * 60}{Colors.END}\n")
+    print(f"\n{Colors.BOLD}{'=' * 60}{Colors.END}")
+    print(f"{Colors.BOLD}{msg}{Colors.END}")
+    print(f"{Colors.BOLD}{'=' * 60}{Colors.END}\n")
 
 
 def print_success(msg):
-    print(f"{Colors.GREEN}✓ {msg}{Colors.END}")
+    print(f"  {Colors.GREEN}[ SUCCESS ]{Colors.END}  {msg}")
 
 
 def print_error(msg):
-    print(f"{Colors.FAIL}✗ {msg}{Colors.END}")
+    print(f"  {Colors.FAIL}[ ERROR ]{Colors.END}    {msg}")
 
 
 def print_info(msg):
-    print(f"{Colors.CYAN}ℹ {msg}{Colors.END}")
+    print(f"  {Colors.CYAN}[ INFO ]{Colors.END}     {msg}")
 
 
 def print_warning(msg):
-    print(f"{Colors.WARNING}⚠ {msg}{Colors.END}")
+    print(f"  {Colors.WARNING}[ ? ]{Colors.END}        {msg}")
 
 
 def run_command(cmd, shell=True, capture_output=False, show_errors=True):  # noqa
@@ -231,6 +231,8 @@ def setup_vm(vm_name="fuzzing-vm"):
          "sudo apt install -y gcc-9-plugin-dev libstdc++-9-dev || sudo apt install -y gcc-10-plugin-dev libstdc++-10-dev"),
         ("Installing debugging tools (gdb, valgrind)",
          "sudo apt install -y gdb valgrind"),
+        ("Configuring core dump pattern for AFL++ fuzzing",
+         "echo core | sudo tee /proc/sys/kernel/core_pattern"),
     ]
 
     failed = []
