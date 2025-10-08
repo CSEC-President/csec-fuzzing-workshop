@@ -97,9 +97,9 @@ sudo make install
 cd $HOME/fuzzing_xpdf/pdf_examples
 
 # Download updated PDF samples
-wget https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/computer-science-major/computer-science-major.pdf
-wget https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf
-wget https://academiccatalog.umd.edu/graduate/introduction-university-maryland/introduction-university-maryland.pdf
+wget -O sample0.pdf https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf
+wget -O sample1.pdf https://pdfobject.com/pdf/sample.pdf
+wget -O sample2.pdf https://hutchesonlab.fiu.edu/wp-content/uploads/sample-pdf.pdf
 ```
 
 **Performance Tip**: Avoid PDFs larger than 100KB for the initial corpus - they significantly slow down fuzzing.
