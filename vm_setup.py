@@ -64,19 +64,19 @@ def print_header(msg):
 
 
 def print_success(msg):
-    print(f"  {Colors.GREEN}[ SUCCESS ]{Colors.END}  {msg}")
+    print(f"  {Colors.GREEN}[ ✓ ]{Colors.END}  {msg}")
 
 
 def print_error(msg):
-    print(f"  {Colors.FAIL}[ ERROR ]{Colors.END}    {msg}")
+    print(f"  {Colors.FAIL}[ ~ ]{Colors.END}  {msg}")
 
 
 def print_info(msg):
-    print(f"  {Colors.CYAN}[ INFO ]{Colors.END}     {msg}")
+    print(f"  {Colors.HEADER}[ i ]{Colors.END}  {msg}")
 
 
 def print_warning(msg):
-    print(f"  {Colors.WARNING}[ ? ]{Colors.END}        {msg}")
+    print(f"  {Colors.WARNING}[ ? ]{Colors.END}  {msg}")
 
 
 def run_command(cmd, shell=True, capture_output=False, show_errors=True):  # noqa
@@ -292,7 +292,7 @@ def clone_fuzzing101(vm_name="fuzzing-vm"):
 def print_vm_info(vm_name="fuzzing-vm"):
     print_header("Setup Complete!")
     print_success("Fuzzing101 Exercise 1 VM is ready")
-    print_warning("Follow exercise instructions at:")
+    print_info("Follow exercise instructions at:")
     print_info("https://github.com/antonio-morales/Fuzzing101/tree/main/Exercise%201")  # noqa
 
     print_header("Commands")
